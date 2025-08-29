@@ -1,4 +1,6 @@
 services:
+
+  #MQTT Broker Service
   mqqtbroker:
     image: mqtt-broker
     build:
@@ -7,6 +9,7 @@ services:
     ports:
       - "1883:1883"
 
+  #BEM Simulator service
   bemsimulator:
     image: bem-comms-simulator
     build:
