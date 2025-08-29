@@ -1,0 +1,18 @@
+{
+  "name": "bemcommssimulator",
+  "version": "1.0.0",
+  "main": "app.js.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mqtt": "^5.14.0",
+    "net": "^1.0.2",
+    "promises": "^0.2.5"
+  },
+  "devDependencies": {},
+  "description": ""
+}
