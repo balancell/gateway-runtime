@@ -1,0 +1,15 @@
+services:
+  mqqtbroker:
+    image: mqtt-broker
+    build:
+      context: mqtt-broker
+      dockerfile: Dockerfile
+    ports:
+      - "1883:1883"
+
+  bemsimulator:
+    image: bem-comms-simulator
+    build:
+      context: bem-comms-simulator
+      dockerfile: Dockerfile
+
