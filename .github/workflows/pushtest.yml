@@ -1,5 +1,4 @@
 name: Testing-test1
-run-name: ${{github.actor}} is testing
 on: [push]
 
 jobs:
