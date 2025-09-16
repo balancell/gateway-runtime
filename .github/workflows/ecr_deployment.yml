@@ -30,7 +30,7 @@ jobs:
       - name: Setup docker compose
         uses: hoverkraft-tech/compose-action@v2.0.1
         with:
-          compose-file: "./compose.yml"
+          compose-file: "/compose.yml"
 
       - name: Build, tag, and push image to Amazon ECR
         env:
