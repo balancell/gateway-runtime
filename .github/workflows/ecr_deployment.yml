@@ -29,11 +29,9 @@ jobs:
         id: login-ecr
         uses: aws-actions/amazon-ecr-login@v1
 
-      - name: Setup docker compose
-        uses: hoverkraft-tech/compose-action@v2.0.1
-
-        with:
-          compose-file: "compose.yml"
+      - name: check working dir
+        run: |
+          ls -alh
 
       - name: Build, tag, and push image to Amazon ECR
         working-directory: ./
