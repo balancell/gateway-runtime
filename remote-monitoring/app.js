@@ -21,7 +21,7 @@ const alarmLimits = {
     bankModuleSocImbalance: 20
 }
 
-const listOfGateways = ['gw-000101', 'gw-000109', 'gw-000113']
+const listOfGateways = ['gw-000046', 'gw-000109', 'gw-000113']
 const listOfCommands = ['df -h | grep \'/dev/root\'', 'top -b']
 
 function auditGateway(connectionParameters, command) {
@@ -108,6 +108,7 @@ function auditGatewaySet(hostname) {
         }
 
         //Battery State Audit
+        
         startMQTTConnection(hostname, `iot/gateway/v1/${hostname}/batteryData`, (topic, data, hostName) => {
             deviceReport.batterySummary = getBatterySummary(JSON.parse(data))
 
@@ -185,5 +186,5 @@ function mqttDataRecieve(topic, message) {
     decodeMSG(messageObj)
     //console.dir(messageObj)
 }
-
-setInterval(startAudit, 10000)
+startAudit()
+setInterval(startAudit, 20000)

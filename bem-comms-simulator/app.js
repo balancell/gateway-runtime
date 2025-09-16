@@ -478,7 +478,7 @@ let localMQTTClient_Connected = false
 
 function startMQTTConnection(slaveIPAddress, topic, messageCallback) {
     console.log("BEM Sim Trying to connect at 1883")
-    localMQTTClient = mqtt.connect(`mqtt://host.docker.internal:1883`)
+    localMQTTClient = mqtt.connect(`mqtt://172.17.0.2:1883`)
 
     localMQTTClient.on('connect', () => {
         console.log("BEM Sim Connected")
