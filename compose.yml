@@ -1,6 +1,7 @@
 services:
   #MQTT Broker Service
   mqqtbroker:
+    platform: linux/arm64/v8
     image: mqtt-broker
     build:
       context: mqtt-broker
@@ -10,6 +11,7 @@ services:
 
   #BEM Simulator service
   bemsimulator:
+    platform: linux/arm64/v8
     image: bem-comms-simulator
     build:
       context: bem-comms-simulator
