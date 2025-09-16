@@ -33,5 +33,5 @@ jobs:
           ECR_REPOSITORY: gateway_runtime # the ECR repo name
           IMAGE_TAG: v1 # The image tag, it could be the commit SHA: ${{ github.sha }}
         run: |
-          docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG -f ./mqtt-broker/Dockerfile .
-          docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+          docker compose build
+          docker push mqtt-broker
