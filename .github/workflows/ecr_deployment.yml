@@ -12,11 +12,13 @@ jobs:
   build-push-image:
     name: Push Image to ECR
     runs-on: ubuntu-latest
+    
     permissions:
       id-token: write
       contents: read
       actions: read
     steps:
+      
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
@@ -29,10 +31,12 @@ jobs:
 
       - name: Setup docker compose
         uses: hoverkraft-tech/compose-action@v2.0.1
+
         with:
-          compose-file: "./gateway-runtime/compose.yml"
+          compose-file: "compose.yml"
 
       - name: Build, tag, and push image to Amazon ECR
+        working-directory: ./
         env:
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
           ECR_REPOSITORY: gateway_runtime # the ECR repo name
