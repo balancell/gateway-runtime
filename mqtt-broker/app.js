@@ -1,5 +1,5 @@
 const aedes = require('aedes')()
-let mqttServer3
+let mqttServer1
 const mqtt = require('mqtt')
 const mqttPort = 1883
 let localMQTTClient
@@ -56,7 +56,7 @@ function MQTTSubscribe(topic) {
 }
 
 function startSystem() {
-  mqttServer3 = createMQTTBroker()
+  mqttServer1 = createMQTTBroker()
 }
 
 function localMQTTClientConnect(messageCallback) {
