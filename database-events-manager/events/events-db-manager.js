@@ -3,13 +3,13 @@ const fs = require('fs')
 const mqtt = require('mqtt')
 
 let clientLocal
-let mqttClientConnected = false
 const localEventMqttTopic = 'local/events'
 let eventsDB
 let dbConnected = false
 
 //const dbLocation = `/data/databases/events.db`
-const dbLocation = `../gateways/config/events.db`
+//const dbLocation = `./database-events-manager/events.db`
+const dbLocation = `/database-events-manager/events.db`
 
 /************************** Event Description Template********************************************
  EventCode: 'LLTT-Position' = `${HWLevelCode.cell}${typeCode.cellUnderVoltage}_${position}`
@@ -131,7 +131,6 @@ function localMQTTClientConnect(topic, messageCallback) {
   clientLocal.on('connect', () => {
     // TODO add for...in for topics if they are an array.
     clientLocal.subscribe(topic)
-    mqttClientConnected = true
   })
 
   clientLocal.on('message', (topic, message) => {
@@ -140,16 +139,14 @@ function localMQTTClientConnect(topic, messageCallback) {
   })
 
   clientLocal.on('error', (err) => {
-    mqttClientConnected = false
   })
 
   clientLocal.on('disconnect', () => {
-    mqttClientConnected = false
   })
 }
 
-function mqttClientTopicSub(topic) {
-  if (mqttClientConnected) clientLocal.subscribe(topic)
+function mqttClientTopicSub(topic) { 
+  if (clientLocal) clientLocal.subscribe(topic)
 }
 
 async function dbConnect(dbLocation) {
@@ -199,4 +196,5 @@ async function dbDisconnect() {
   }
 }
 
-startDB()
+
+module.exports.startDB = startDB

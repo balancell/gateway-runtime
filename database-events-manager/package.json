@@ -13,8 +13,8 @@
     "express": "^5.1.0",
     "merge-descriptors": "^2.0.0",
     "mqtt": "^5.14.0",
-    "net": "^1.0.2"
+    "net": "^1.0.2",
+    "sqlite3": "^5.1.7"
   },
-  "devDependencies": {},
   "description": ""
 }
