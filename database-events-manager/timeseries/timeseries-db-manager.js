@@ -3,7 +3,6 @@ const fs = require('fs')
 const mqtt = require('mqtt') 
 
 let localMQTTClient
-
 let timeseriesDB
 let dbConnected = false
 const dbLocation = `./database-events-manager/databases/batterytimeseries.db`

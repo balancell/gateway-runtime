@@ -1,10 +1,8 @@
 const mqtt = require('mqtt')
 let localMQTTClient
+let mqttClientConnected
 let batteryTSData = {}
 let topic = 'local/timeseries'
-
-
-//Format - {bankNumber, Voltage, Current, SoC, MaxCellVoltage, MaxCellTemp}
 
 function localMQTTClientConnect(topic, messageCallback) {
     localMQTTClient = mqtt.connect('mqtt://gw-000105')
