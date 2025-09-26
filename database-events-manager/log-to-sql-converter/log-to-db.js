@@ -2,7 +2,7 @@ const sqlite3 = require('sqlite3').verbose()
 const fs = require('fs')
 const mqtt = require('mqtt')
 let timeseriesDB
-let dbConnected = false
+let dbConnected = false  
 const dbLocation = `./database-events-manager/timeseries.db`
 
 /***********************************
