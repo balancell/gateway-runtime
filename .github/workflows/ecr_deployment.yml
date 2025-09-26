@@ -30,8 +30,11 @@ jobs:
         uses: aws-actions/amazon-ecr-login@v1
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
       - uses: actions/checkout@v4
+=======
+>>>>>>> parent of 29bb2dc (Testing workflows)
       - name: check working dir
         run: |
           ls -alh
